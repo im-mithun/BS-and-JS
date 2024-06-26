@@ -79,7 +79,7 @@
           <tr>
             <td><b>Password</b></td>
             <td>
-              <input type="password" name="password" style="width: 77%" />
+              <input type="password" name="password" id="password" style="width: 77%" />
               <span class="error" id="passwordError"></span>
             </td>
           </tr>
@@ -170,44 +170,49 @@
     </div>
 
     <script>
-      document
-        .getElementById("registrationForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          let isValid = true;
-          const form = event.target;
-          const errorElements = form.querySelectorAll(".error");
-          errorElements.forEach(
-            (errorElement) => (errorElement.textContent = "")
-          );
-          form.querySelectorAll("input, textarea, select").forEach((input) => {
-            if (!input.value.trim()) {
-              const errorElement = document.getElementById(
-                input.name + "Error"
-              );
-              if (errorElement) {
-                errorElement.textContent = "POOR";
-              }
-              isValid = false;
+      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let isValid = true;
+        const form = event.target;
+        const errorElements = form.querySelectorAll(".error");
+        errorElements.forEach(
+          (errorElement) => (errorElement.textContent = "")
+        );
+        form.querySelectorAll("input, textarea, select").forEach((input) => {
+          if (!input.value.trim()) {
+            const errorElement = document.getElementById(input.name + "Error");
+            if (errorElement) {
+              errorElement.textContent = "POOR";
             }
-          });
-          const password = form.querySelector('input[name="password"]').value;
-          const repassword = form.querySelector(
-            'input[name="repassword"]'
-          ).value;
-          const repasswordError = document.getElementById("repasswordError");
-          if (!repassword.trim()) {
-            repasswordError.textContent = "POOR";
             isValid = false;
-          } else if (password !== repassword) {
-            repasswordError.textContent = "MISMATCH";
-            isValid = false;
-          }
-
-          if (isValid) {
-            form.submit();
           }
         });
+        const password = form.querySelector('input[name="password"]').value;
+        const repassword = form.querySelector('input[name="repassword"]').value;
+        const repasswordError = document.getElementById("repasswordError");
+        if (!repassword.trim()) {
+          repasswordError.textContent = "POOR";
+          isValid = false;
+        } else if (password !== repassword) {
+          repasswordError.textContent = "MISMATCH";
+          isValid = false;
+        }
+
+        if (isValid) {
+          form.submit();
+        }
+      });
+
+      const passwordInput = document.getElementById("password");
+      const passwordError = document.getElementById("passwordError");
+
+      passwordInput.addEventListener("input", function () {
+        if (passwordInput.value.length === 0 || passwordInput.value.length < 3) {
+          passwordError.textContent = "POOR";
+        } else {
+          passwordError.textContent = "GOOD";
+        }
+      });
     </script>
   </body>
 </html>
