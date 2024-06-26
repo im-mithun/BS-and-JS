@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #fceabb, #fcc9d8);
+            font-family: Arial, sans-serif;
+        }
+        .registration-form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .registration-form h2 {
+            text-align: center;
+            color: blue;
+        }
+        .registration-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"],
+        .registration-form input[type="number"],
+        .registration-form textarea,
+        .registration-form select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .registration-form input[type="radio"] {
+            margin-right: 10px;
+        }
+        .registration-form .error {
+            color: red;
+            font-size: 12px;
+        }
+        .registration-form .languages-known {
+            margin: 10px 0;
+        }
+        .registration-form .declaration {
+            margin: 10px 0;
+        }
+        .registration-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .registration-form button:hover {
+            background-color: darkred;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .login-link a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Registration Form</h2>
+        <form>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name">
+            <span class="error">POOR</span>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name">
+            <span class="error">POOR</span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <span class="error">POOR</span>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <span class="error">POOR</span>
+
+            <label for="re-password">Re-enter Password</label>
+            <input type="password" id="re-password" name="re-password">
+            <span class="error">POOR OR MISMATCH</span>
+
+            <label>Gender</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+            <span class="error">POOR</span>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone">
+            <span class="error">POOR</span>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address"></textarea>
+            <span class="error">POOR</span>
+
+            <label for="state">State</label>
+            <input type="text" id="state" name="state">
+            <span class="error">POOR</span>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">Choose your country</option>
+                <!-- Add more country options here -->
+            </select>
+
+            <div class="languages-known">
+                <label>Languages known</label>
+                <input type="checkbox" id="english" name="languages" value="english">
+                <label for="english">English</label>
+                <input type="checkbox" id="kannada" name="languages" value="kannada">
+                <label for="kannada">Kannada</label>
+                <input type="checkbox" id="hindi" name="languages" value="hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="telugu" name="languages" value="telugu">
+                <label for="telugu">Telugu</label>
+            </div>
+
+            <div class="declaration">
+                <input type="checkbox" id="declaration" name="declaration">
+                <label for="declaration">Hereby I declare all the given details are true</label>
+            </div>
+
+            <button type="submit">REGISTER</button>
+
+            <div class="login-link">
+                <a href="#">Log in to Elearn website</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
