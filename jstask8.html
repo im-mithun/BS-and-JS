@@ -207,7 +207,7 @@
       const passwordError = document.getElementById("passwordError");
 
       passwordInput.addEventListener("input", function () {
-        if (passwordInput.value.length === 0 || passwordInput.value.length < 3) {
+        if (passwordInput.value.length === 0 || passwordInput.value.length < 4) {
           passwordError.textContent = "POOR";
         } else {
           passwordError.textContent = "GOOD";
